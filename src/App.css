@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:400,500,600,700&display=swap');
+
+body {
+  font-family: 'Prompt', sans-serif;
+  background: #ececec;
+}
+
 .App {
   text-align: center;
 }
