@@ -19,7 +19,7 @@ const ItemContextProvider = ({ children }) => {
     let newItem = {
       id: uuid(),
       item: e.target[0].value,
-      times: e.target[1].value,
+      times: parseInt(e.target[1].value),
       background: color
     };
     setItem(prev => [...prev, newItem]);

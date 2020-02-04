@@ -8,7 +8,7 @@ import ItemContextProvider from "./contexts/ItemContext";
 
 const StyledMainWrapper = styled.main`
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 1fr 2fr;
   min-height: 100vh;
   background: #f5f5f5;
 `;

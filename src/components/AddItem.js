@@ -16,7 +16,7 @@ export default function AddItem() {
   );
   return (
     <div>
-      <h3>Add Item</h3>
+      <h2>Add Item</h2>
       <form action="submit" onSubmit={addItem}>
         <input type="text" name="item" placeholder="Your item name here" />
         <select>
