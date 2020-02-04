@@ -1,32 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import AddForm from "./AddForm";
-import ItemList from "./ItemList";
+import AddItem from "./AddItem";
+import ItemsList from "./ItemsList";
 
-const SidebarWrapper = styled.aside`
-  background: #f4f4f4;
-  padding: 2rem;
+const StyledSidebar = styled.div`
+  padding: 2rem 1rem;
+  background: #fff;
 `;
 
-export default function Sidebar({
-  handleSubmit,
-  handleChangeComplete,
-  handleDelete,
-  items,
-  color
-}) {
+export default function Sidebar() {
   return (
-    <SidebarWrapper>
-      <AddForm
-        handleSubmit={handleSubmit}
-        handleChangeComplete={handleChangeComplete}
-        color={color}
-      />
-      <ItemList items={items} handleDelete={handleDelete} />
-    </SidebarWrapper>
+    <StyledSidebar>
+      <AddItem />
+      <ItemsList />
+    </StyledSidebar>
   );
 }
-
-// 1. event
-// times
-// color

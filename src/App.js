@@ -1,62 +1,27 @@
-import React, { useState, useReducer } from "react";
+import React from "react";
 import "./App.css";
-import Sidebar from "./components/Sidebar";
 import styled from "styled-components";
 
-const StyledAppWrapper = styled.div`
+import Sidebar from "./components/Sidebar";
+import Wheel from "./components/Wheel";
+import ItemContextProvider from "./contexts/ItemContext";
+
+const StyledMainWrapper = styled.main`
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 3fr;
+  min-height: 100vh;
+  background: #f5f5f5;
 `;
 
-const initialItems = [
-  {
-    item: "Pierwszy item",
-    times: 1,
-    background: "#ccc"
-  }
-];
-
 function App() {
-  const [items, setItems] = useState(initialItems);
-
-  const [color, setColor] = useState("#f44336");
-
-  const handleChangeComplete = (color, event) => {
-    setColor(color.hex);
-    console.log(color);
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-
-    let newItem = {
-      item: e.target[0].value,
-      times: e.target[1].value,
-      background: color
-    };
-
-    setItems(prev => [...prev, newItem]);
-    console.log(items);
-  };
-
-  const handleDelete = e => {
-    console.log(e.target.key);
-  };
-
   return (
     <div className="App">
-      <StyledAppWrapper>
-        <Sidebar
-          handleSubmit={handleSubmit}
-          handleChangeComplete={handleChangeComplete}
-          items={items}
-          color={color}
-          handleDelete={handleDelete}
-        />
-        <main>
-          <h1>Fortune wheel</h1>
-        </main>
-      </StyledAppWrapper>
+      <StyledMainWrapper>
+        <ItemContextProvider>
+          <Sidebar />
+          <Wheel />
+        </ItemContextProvider>
+      </StyledMainWrapper>
     </div>
   );
 }
