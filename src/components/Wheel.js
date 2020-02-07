@@ -1,21 +1,19 @@
 import React, { useContext } from "react";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from "recharts";
-import gsap from "gsap";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import styled from "styled-components";
+import "../App.css";
 
 import { ItemContext } from "../contexts/ItemContext";
 
-export default function Wheel() {
-  let x = 1;
-  const rotateWheel = () => {
-    console.log("rotate");
-    x = x + 1;
-    gsap.to(".recharts-pie", {
-      duration: 3,
-      rotation: 1240 * x,
-      transformOrigin: "50% 50%"
-    });
-  };
+// STYLES
+const StyledChartWrapper = styled.div`
+  position: relative;
+  background: #fff;
+  max-height: 720px;
+  border-radius: 1rem;
+`;
 
+export default function Wheel() {
   const { item } = useContext(ItemContext);
 
   const RADIAN = Math.PI / 180;
@@ -39,15 +37,17 @@ export default function Wheel() {
         fill="white"
         textAnchor={x > cx ? "start" : "end"}
         dominantBaseline="central"
+        fontSize={16}
       >
-        {`${item[index].item} chance:${(percent * 100).toFixed(0)}%`}
+        {`${item[index].item} (${(percent * 100).toFixed(0)}%)`}
       </text>
     );
   };
+
   return (
     <>
-      <div>
-        <ResponsiveContainer width="95%">
+      <StyledChartWrapper>
+        <ResponsiveContainer width="99%" height="99%">
           <PieChart>
             <Pie
               data={item}
@@ -63,10 +63,7 @@ export default function Wheel() {
             </Pie>
           </PieChart>
         </ResponsiveContainer>
-      </div>
-      <div>
-        <button onClick={rotateWheel}>dfg</button>
-      </div>
+      </StyledChartWrapper>
     </>
   );
 }

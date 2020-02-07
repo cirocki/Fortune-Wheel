@@ -4,7 +4,7 @@ import AddItem from "./AddItem";
 import ItemsList from "./ItemsList";
 
 const StyledSidebar = styled.div`
-  padding: 2rem;
+  padding-right: 2rem;
 `;
 
 export default function Sidebar() {

@@ -1,10 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Prompt:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kanit:400,500,600,700|Open+Sans&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Kanit', sans-serif;
   background: #ececec;
 }
 
 .App {
   text-align: center;
+}
+
+.recharts-wrapper {
+  z-index: 2;
+}
+
+.recharts-wrapper::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  top: 0;
+  width: 50%;
+  border-right: 3px dotted black;
+  z-index: 1;
 }
