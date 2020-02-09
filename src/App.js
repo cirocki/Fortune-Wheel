@@ -15,6 +15,7 @@ const StyledContainer = styled.div`
 const StyledMainWrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-gap: 2rem;
   min-height: 100vh;
   padding: 4rem 2rem;
   @media (max-width: 919px) {

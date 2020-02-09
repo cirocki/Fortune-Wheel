@@ -1,3 +1,17 @@
-# Wheel of fortune 🎰
+# 🎰 Wheel of fortune
 
-Wheel of fortune with React
+## Website Live
+
+link
+
+## About project
+
+In this app You can create a wheel of fortune with own items. I used react useContext hook to manage state, Recharts library to create pie chart (fortune wheel in this case) and GSAP to handle rotation animation.
+
+#
+
+![Website screen](https://raw.githubusercontent.com/cirocki/Weather-App/master/src/images/weatherappscreen.jpg)
+
+## More
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

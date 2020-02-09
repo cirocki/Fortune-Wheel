@@ -9,11 +9,11 @@ import { ItemContext } from "../contexts/ItemContext";
 // STYLES
 const StyledChartWrapper = styled.div`
   position: relative;
-  background: #fff;
+  min-height: 280px;
   max-height: 720px;
-  position: relative;
+  background: #fff;
 `;
-const StyledWheelTop = styled.div`
+const StyledSpinDiv = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
@@ -54,7 +54,7 @@ export default function Wheel() {
   return (
     <>
       <StyledChartWrapper>
-        <StyledWheelTop>{item.length ? <SpinButton /> : null}</StyledWheelTop>
+        <StyledSpinDiv>{item.length ? <SpinButton /> : null}</StyledSpinDiv>
         <ResponsiveContainer width="99%" height="99%">
           <PieChart>
             <Pie

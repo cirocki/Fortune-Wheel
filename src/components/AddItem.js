@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { CirclePicker } from "react-color";
 
 const StyledAddCard = styled.div`
-  background: #fff;
   max-width: 460px;
+  background: #fff;
 `;
 const StyledCardTop = styled.div`
   padding: 1.5rem;
@@ -50,18 +50,18 @@ const StyledSelect = styled.select`
 `;
 
 const StyledBtn = styled.button`
-  font-family: "Kanit", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   margin-top: 3rem;
   padding: 1rem 4rem;
   background: #111;
   color: #fff;
+  font-family: "Kanit", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   border: none;
   border-radius: 5rem;
   cursor: pointer;
   &:hover {
-    color: #fff;
+    color: #c7f63d;
   }
 `;
 

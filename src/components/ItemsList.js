@@ -9,7 +9,6 @@ const StyledItemsWrapper = styled.div`
   max-width: 460px;
   margin-top: 2rem;
   color: #fff;
-  background: #fff;
 `;
 
 const StyledItem = styled.div`
