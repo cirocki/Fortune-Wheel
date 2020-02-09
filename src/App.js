@@ -17,6 +17,9 @@ const StyledMainWrapper = styled.main`
   grid-template-columns: 1fr 2fr;
   min-height: 100vh;
   padding: 4rem 2rem;
+  @media (max-width: 919px) {
+    grid-template-columns: 1fr;
+  }
   @media (max-width: 419px) {
     padding: 1rem;
   }

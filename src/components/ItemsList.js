@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 
 const StyledItemsWrapper = styled.div`
+  max-width: 460px;
   margin-top: 2rem;
   color: #fff;
   background: #fff;

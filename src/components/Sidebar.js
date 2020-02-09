@@ -5,6 +5,9 @@ import ItemsList from "./ItemsList";
 
 const StyledSidebar = styled.div`
   padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default function Sidebar() {

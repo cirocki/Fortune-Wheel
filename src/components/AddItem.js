@@ -5,6 +5,7 @@ import { CirclePicker } from "react-color";
 
 const StyledAddCard = styled.div`
   background: #fff;
+  max-width: 460px;
 `;
 const StyledCardTop = styled.div`
   padding: 1.5rem;
