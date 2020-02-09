@@ -10,7 +10,7 @@ In this app You can create a wheel of fortune with own items. I used react useCo
 
 #
 
-![Website screen](https://raw.githubusercontent.com/cirocki/Weather-App/master/src/images/weatherappscreen.jpg)
+![Website screen](https://raw.githubusercontent.com/cirocki/Fortune-Wheel/master/src/images/fortunescreen.jpg)
 
 ## More
 
