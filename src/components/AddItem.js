@@ -3,24 +3,25 @@ import { ItemContext } from "../contexts/ItemContext";
 import styled from "styled-components";
 import { CirclePicker } from "react-color";
 
-const StyledAddDiv = styled.div`
+const StyledAddCard = styled.div`
   background: #fff;
+`;
+const StyledCardTop = styled.div`
+  padding: 1.5rem;
+  background: #f4f4f4;
+`;
+const StyledCardMid = styled.div`
   padding: 2rem;
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 `;
 const StyledHeading = styled.h2`
   font-weight: 400;
-  padding-bottom: 1rem;
-  color: #757575;
+  color: #8f8f8f;
 `;
 const StyledInfo = styled.p`
   font-family: "Open Sans", sans-serif;
   font-size: 0.875rem;
   line-height: 1.8;
-  color: #757575;
+  color: #8f8f8f;
 `;
 const StyledForm = styled.form`
   padding: 1rem;
@@ -28,31 +29,39 @@ const StyledForm = styled.form`
   flex-direction: column;
   align-items: center;
 `;
+const StyledInputsWrapper = styled.div`
+  display: flex;
+  margin: 1rem 0 2rem 0;
+`;
+
 const StyledInput = styled.input`
+  min-width: 165px;
   background: #fff;
-  padding: 1rem;
-  border-radius: 5rem;
+  padding: 1rem 1.25rem;
   border: 1px solid #ccc;
-  margin: 2rem;
+  color: #8f8f8f;
 `;
 
 const StyledSelect = styled.select`
-  padding: 0.5rem;
-  margin-bottom: 2rem;
-  width: 120px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-left: none;
 `;
 
 const StyledBtn = styled.button`
   font-family: "Kanit", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-top: 2rem;
-  padding: 1rem 3rem;
+  margin-top: 3rem;
+  padding: 1rem 4rem;
   background: #111;
   color: #fff;
   border: none;
   border-radius: 5rem;
   cursor: pointer;
+  &:hover {
+    color: #fff;
+  }
 `;
 
 export default function AddItem() {
@@ -73,37 +82,42 @@ export default function AddItem() {
   ];
 
   return (
-    <StyledAddDiv>
-      <StyledHeading>New Item</StyledHeading>
-      <StyledInfo>
-        It's a wheel of fortune, You can add your own items and random draw.
-        Just write your <b>item name</b> below, set the <b>quantity</b> (default
-        is 1, but a larger number is a proportionally greater chance of being
-        drawn) and your <b>item color</b>.
-      </StyledInfo>
-      <StyledForm action="submit" onSubmit={addItem}>
-        <StyledInput
-          type="text"
-          name="item"
-          placeholder="Your item name here"
-        />
-        <StyledSelect>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </StyledSelect>
-        <CirclePicker
-          onChangeComplete={handleColorChange}
-          color={color}
-          circleSize={32}
-          circleSpacing={16}
-          width={300}
-          colors={myColors}
-        />
-        <StyledBtn type="submit">Add item</StyledBtn>
-      </StyledForm>
-    </StyledAddDiv>
+    <StyledAddCard>
+      <StyledCardTop>
+        <StyledHeading>New Item</StyledHeading>
+      </StyledCardTop>
+      <StyledCardMid>
+        <StyledInfo>
+          Write your <b>item name</b> below, set the <b>quantity</b> (default is
+          1, but a larger number is a proportionally greater chance of being
+          drawn) and your <b>item color</b>.
+        </StyledInfo>
+        <StyledForm action="submit" onSubmit={addItem}>
+          <StyledInputsWrapper>
+            <StyledInput
+              type="text"
+              name="item"
+              placeholder="Your item name here"
+            />
+            <StyledSelect>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </StyledSelect>
+          </StyledInputsWrapper>
+          <CirclePicker
+            onChangeComplete={handleColorChange}
+            color={color}
+            circleSize={32}
+            circleSpacing={16}
+            width={288}
+            colors={myColors}
+          />
+          <StyledBtn type="submit">Add item</StyledBtn>
+        </StyledForm>
+      </StyledCardMid>
+    </StyledAddCard>
   );
 }

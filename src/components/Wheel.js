@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import styled from "styled-components";
 import "../App.css";
+import SpinButton from "./SpinButton";
 
 import { ItemContext } from "../contexts/ItemContext";
 
@@ -10,9 +11,15 @@ const StyledChartWrapper = styled.div`
   position: relative;
   background: #fff;
   max-height: 720px;
-  border-radius: 1rem;
+  position: relative;
 `;
-
+const StyledWheelTop = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 999;
+`;
 export default function Wheel() {
   const { item } = useContext(ItemContext);
 
@@ -47,6 +54,7 @@ export default function Wheel() {
   return (
     <>
       <StyledChartWrapper>
+        <StyledWheelTop>{item.length ? <SpinButton /> : null}</StyledWheelTop>
         <ResponsiveContainer width="99%" height="99%">
           <PieChart>
             <Pie
@@ -55,7 +63,7 @@ export default function Wheel() {
               label={renderCustomizedLabel}
               fill="#8884d8"
               dataKey="times"
-              isAnimationActive={false}
+              isAnimationActive={true}
             >
               {item.map((el, index) => (
                 <Cell key={`cell-${index}`} fill={el.background} />

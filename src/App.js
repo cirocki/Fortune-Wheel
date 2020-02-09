@@ -8,23 +8,32 @@ import ItemContextProvider from "./contexts/ItemContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+const StyledContainer = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+`;
 const StyledMainWrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 2fr;
   min-height: 100vh;
-  padding: 4rem;
+  padding: 4rem 2rem;
+  @media (max-width: 419px) {
+    padding: 1rem;
+  }
 `;
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <StyledMainWrapper>
-        <ItemContextProvider>
-          <Sidebar />
-          <Wheel />
-        </ItemContextProvider>
-      </StyledMainWrapper>
+      <ItemContextProvider>
+        <Header />
+        <StyledContainer>
+          <StyledMainWrapper>
+            <Sidebar />
+            <Wheel />
+          </StyledMainWrapper>
+        </StyledContainer>
+      </ItemContextProvider>
       <Footer />
     </div>
   );

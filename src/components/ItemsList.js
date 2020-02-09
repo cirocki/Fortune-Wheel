@@ -7,23 +7,14 @@ import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 
 const StyledItemsWrapper = styled.div`
   margin-top: 2rem;
-  padding: 2rem;
   color: #fff;
   background: #fff;
-  border-radius: 1rem;
-`;
-
-const StyledItemsHeading = styled.h2`
-  color: #757575;
-  font-weight: 400;
 `;
 
 const StyledItem = styled.div`
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
   align-items: center;
-  margin-top: 1rem;
-  border-radius: 1rem;
 `;
 
 const StyledItemName = styled.p`
@@ -52,7 +43,6 @@ export default function ItemsList() {
   const { item, removeItem } = useContext(ItemContext);
   return (
     <StyledItemsWrapper>
-      <StyledItemsHeading>Item List</StyledItemsHeading>
       {item.map(el => (
         <StyledItem key={el.id} style={{ background: el.background }}>
           <StyledItemName>{el.item}</StyledItemName>
