@@ -9,7 +9,7 @@ import { ItemContext } from "../contexts/ItemContext";
 // STYLES
 const StyledChartWrapper = styled.div`
   position: relative;
-  min-height: 280px;
+  height: 95vh;
   max-height: 720px;
   background: #fff;
 `;
