@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import uuid from "react-uuid";
 
 export const ItemContext = createContext();
@@ -11,7 +11,9 @@ const ItemContextProvider = ({ children }) => {
   };
 
   // ITEM STATE
-  const [item, setItem] = useState([]);
+  const [item, setItem] = useState(
+    JSON.parse(localStorage.getItem("ItemsInLocalStorage")) || []
+  );
 
   const addItem = e => {
     e.preventDefault();
@@ -31,9 +33,10 @@ const ItemContextProvider = ({ children }) => {
     setItem(filteredItems);
   };
 
-  const editItem = () => {
-    console.log("edit");
-  };
+  // UPDATE LOCAL STORAGE WHEN ITEM CHANGED
+  useEffect(() => {
+    localStorage.setItem("ItemsInLocalStorage", JSON.stringify(item));
+  }, [item]);
 
   // transfer combined context to provider
   const contextValue = {
@@ -41,8 +44,7 @@ const ItemContextProvider = ({ children }) => {
     handleColorChange,
     item,
     addItem,
-    removeItem,
-    editItem
+    removeItem
   };
 
   return (
